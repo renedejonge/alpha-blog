@@ -59,6 +59,13 @@ class ArticlesController < ApplicationController
     @articles = Article.all   # niet te verwarren met gebruik van @article variabele
   end
 
+  def destroy
+      @article = Article.find(params[:id])
+      @article.destroy # deletes article from the database
+      flash[:notice] = "Article was successfully deleted"
+      redirect_to articles_path # stuurt door naar index van articles
+  end
+
   private
 
     def article_params
