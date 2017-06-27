@@ -1,6 +1,9 @@
 <h1>Showing selected article with id <%= render plain: params[:id].inspect %></h1>
 
+<%= link_to 'Back to Articles Listing', articles_path %> | <%= link_to 'Edit this article', edit_article_path(@article) %>
+
 <p>Article <%= @article.id %></p>
 <p>Title: <%= @article.title %></p>
 <p>Description: <%= @article.description %></p>
 <p>Created at: <%= @article.created_at %></p>
+<p>Updated at: <%= @article.updated_at %></p>
