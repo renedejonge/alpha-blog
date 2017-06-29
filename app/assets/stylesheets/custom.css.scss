@@ -1,3 +1,77 @@
+// Afwijken van bootstrap standaard
+$navbar-default-bg:  rgb(244,242,102);
+
+
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+#logo {
+  float: left;
+  font-size: 1.5em;
+  color: rgb(39, 114, 234);
+  text-transform: none;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+#logo.hover {
+  color: rgb(234, 95, 39);
+  text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  background-image: asset-url('plaatje.jpeg');
+  background-size: cover;
+  height: 400px;
+}
+
+.jumbotron h1 {
+  text-align: center;
+  color: rgb(39, 114, 234);
+  letter-spacing: -1px;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.btn-eigen, .btn-eigen:visited {
+  font-size: 1.7em;
+  color: rgb(244,242,102);
+  background-color: rgb(39, 114, 234);
+}
+
+.btn-eigen:hover {
+  font-size: 1.7em;
+  color: rgb(39, 114, 234);
+  background-color: rgb(244,242,102);
+}
+
+.btn-eigen:active:focus {
+  font-size: 1.7em;
+  color: rgb(244,242,102);
+  background-color: rgb(39, 114, 234);
+}
+
+footer {
+  border-top: thin solid black;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  display: inline;
+}
+
+footer ul li a {
+  display: inline-block;
+  margin-left: 10px;
+}
