@@ -58,6 +58,26 @@ $navbar-default-bg:  rgb(244,242,102);
   background-color: rgb(39, 114, 234);
 }
 
+.article-actions {
+  border-top: thin solid black;
+  padding-top: 5px;
+}
+
+.description {
+  margin-top: 0;
+}
+
+.article-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.article-body {
+  border-top: thin dashed black;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 footer {
   border-top: thin solid black;
 }
