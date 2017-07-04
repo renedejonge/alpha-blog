@@ -10,9 +10,11 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//  
+// Removed require rails-usj after problem with double confirmation after clicking delete link
+//
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require rails-ujs
 //= require turbolinks
 //= require_tree .
