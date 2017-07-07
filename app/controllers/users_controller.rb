@@ -4,9 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    debugger
     @user = User.new(user_params)
-    @user.save
     if @user.save
       flash[:success] = "Welcome to Alpha Blog, #{@user.username}!"
       redirect_to articles_path
