@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :articles
-  before_save { self.email = email.downcase! }
+  #before_save { self.email = email.downcase! } slaat email nill op in de database ?
   validates :username, presence: true, uniqueness: { case_sensitive: false }, length: { minimum: 3, maximum: 25 }
   
   # VALID_EMAIL_REGEX= moet boven de validates regel die deze gebruikt staan! Want anders uninitialized constant foutmelding!
