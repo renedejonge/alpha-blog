@@ -14,6 +14,10 @@ gem 'jquery-rails'
 #bcrypt for authentication
 gem 'bcrypt', '~> 3.1.7'
 
+#will_paginate and bootstrap-will_paginate for pagination of articles and users listing
+gem 'will_paginate', '~>3.1.6'
+gem 'bootstrap-will_paginate', '~>1.0.0'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
 # Use Puma as the app server
