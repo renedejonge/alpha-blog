@@ -8,7 +8,7 @@ class SearchController < ApplicationController
     @search = params["zoek"][:zoekterm]
     #flash[:success] = "You searched for \"#{@search}\""
     @resultaat = User.find_by(username: @search)
-    flash[:success] = "#{@resultaat.email}"
+    flash[:success] = "#{@resultaat.email}" if @resultaat
     redirect_to users_path
   end
 
