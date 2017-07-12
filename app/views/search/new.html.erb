@@ -1,0 +1,7 @@
+<h1>Search</h1>
+
+<%= form_for "zoek" do |f| %>
+  <%= f.label :label %>
+  <%= f.text_field :zoekterm, placeholder: "Search user", autofocus: true %>
+  <%= f.submit "Search" %>
+<% end %>
