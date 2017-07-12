@@ -1,10 +1,11 @@
 class UsersController < ApplicationController
   
   before_action :set_user, only: [:edit, :update, :show]
-  before_action :require_same_user, only: [:edit, :update]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # index, show, new, edit, create, update, distroy
-  # geen destroy, volgorde van maken in de lessen
+  # nog geen destroy, volgorde van maken in de lessen
+  # destroy toegevoegd na implementeren van inlog-functionaliteit
 
   def new
     @user = User.new
@@ -45,6 +46,13 @@ class UsersController < ApplicationController
     @users = User.paginate(page: params[:page], per_page: 5)
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:danger] = "User and all their articles have been deleted"
+    redirect_to users_path
+  end
+
   private
 
   def set_user
@@ -56,9 +64,21 @@ class UsersController < ApplicationController
   end
 
   def require_same_user
-    if !logged_in? || current_user != @user
+    #if !logged_in? || current_user != @user # !logged_in? is overbodig vergelijken met
     #if current_user != @user
+    if !(current_user == @user || current_user.admin?)
       flash[:danger] = "You can only edit your own account"
+      redirect_to root_path
+    end
+  end
+
+  def require_admin
+    if !logged_in? || !current_user.admin?
+    # current_user.admin? alleen veroorzaakt een fout als current_user nil is
+    # als current_user nil is, dan is de bezoeker niet ingelogd, dus !logged_in? is true
+    # het if-statement genereert geen fout omdat het tweede deel van de of-conditie
+    # niet meer gecheckt hoeft te worden
+      flash[:danger] = "Only admin users can perform that action"
       redirect_to root_path
     end
   end
