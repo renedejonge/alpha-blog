@@ -1,5 +1,7 @@
 class Article < ActiveRecord::Base
   belongs_to :user
+  has_many :article_categories
+  has_many :categories, through: :article_categories
 
   # voorbeeld: titel in hoofdletters voordat deze wordt opgeslagen
   # before_save { self.title = title.upcase }
