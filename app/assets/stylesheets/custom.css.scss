@@ -90,6 +90,17 @@ $navbar-default-bg:  rgb(244,242,102);
   padding-left: 0;
 }
 
+.badge {
+  background-color: rgb(244,242,102);
+  text-transform: uppercase;
+  letter-spacing: 0px;
+  font-weight: bold;
+}
+
+.input-checkbox input {
+  width: auto !important;
+}
+
 footer {
   border-top: thin solid black;
 }

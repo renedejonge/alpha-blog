@@ -16,7 +16,9 @@
 
   <% if @article.categories.any? %>
     <p>Categories:
-    <%= render @article.categories %>
+    <% @article.categories.each do |cat| %>
+      <%= render 'categories/category', category: cat %>
+    <% end %>
     </p>
   <% end %>
 
